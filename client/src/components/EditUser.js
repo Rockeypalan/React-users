@@ -8,7 +8,7 @@ import { useParams, useNavigate } from "react-router-dom";
 const EditUser = () => {
 
     const navigate = useNavigate();
-     console.log(useParams);
+    //  console.log(useParams);
   const { id } = useParams(); // { id: '' }
   const [post, setPost] = useState({
         firstname:'',
@@ -44,14 +44,17 @@ const EditUser = () => {
       })
       .catch((err) => console.log(err));
 
-  });
+  },[]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // console.log(name, value);
     setPost((prevData) => {
+      // console.log(prevData);
       return {
         ...prevData,
         [name]: value,
+        
       };
     });
   };
@@ -73,7 +76,7 @@ const EditUser = () => {
     };
 
     axios
-      .put(`http://localhost:5000/posts/:${id}`, newPost)
+      .put(`http://localhost:5000/posts/${id}`, newPost)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
 

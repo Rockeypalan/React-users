@@ -17,9 +17,9 @@ const Post = ({post, deletePost, key}) => {
                     <td>{post.zip}</td>
                     <td>{post.companyname}</td> */}
                     <td>
-                        <Link to={`/${post._id}`} > edit</Link> |
-                        <a href='http://localhost:3000/users' onClick={()=> {
-                            post.deletePost(post._id);
+                        <Link to={`/${post._id}`} > edit</Link> | {''}
+                        <a href='#' onClick={()=> {
+                            deletePost(post._id);
                         }}
                         >delete</a>
                     </td>

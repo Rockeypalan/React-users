@@ -5,7 +5,7 @@ import Post from "../components/Post";
 
 const UsersList = () => {
     const [posts, setPosts] = useState([]);
-    console.log(posts);
+    // console.log(posts);
 
     useEffect(() => {
         axios.get('http://localhost:5000/posts')
@@ -13,9 +13,9 @@ const UsersList = () => {
             .catch((err) => console.log(err));
     }, []);
 
-    const viewPost = (id) =>{
-        setPosts(posts.filter((post) => post._id != id));
-        axios.get(`http://localhost:5000/posts:${id}`)
+    const deletePost = (id) =>{
+        setPosts(posts.filter((post) => post._id !== id));
+        axios.delete(`http://localhost:5000/posts/${id}`)
                 .then((res) => console.log(res.data))
                 .catch((err) => console.log(err));
     };
@@ -41,16 +41,16 @@ const UsersList = () => {
                             return(
                                 <Post 
                                     post={currentPost}
-                                    viewPost = {viewPost}
+                                    deletePost = {deletePost}
                                     key = {currentPost._id}
                                 />
-                            )
+                            );
                         })
                     }
                 </tbody>
             </table>
         </div>
-    )
+    );
 };
 
 export default UsersList;

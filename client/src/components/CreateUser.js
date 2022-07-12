@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const CreateUser = () => {
+    const navigate = useNavigate();
     const [post, setPost] = useState({
         firstname:'',
         lastname:'',
@@ -47,7 +49,8 @@ const CreateUser = () => {
         axios.post('http://localhost:5000/posts/add', newPost)
                 .then((res) => console.log(res.data))
                 .catch((err) => console.log(err));
-                
+
+            navigate("/users");
     };
     
 

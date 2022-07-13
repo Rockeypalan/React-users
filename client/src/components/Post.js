@@ -13,15 +13,12 @@ const Post = ({post, deletePost, key}) => {
                     <td>{post.web}</td>
                     <td>{post.city}</td>
                     <td>{post.state}</td>
-                    {/* <td>{post.age}</td>
-                    <td>{post.zip}</td>
-                    <td>{post.companyname}</td> */}
                     <td>
-                        <Link to={`/${post._id}`} > edit</Link> | {''}
-                        <a href='#' onClick={()=> {
+                        <Link to={`/${post._id}`} > <i class="bi bi-pencil-square" /></Link> | {''}
+                        <a href='/create' onClick={()=> {
                             deletePost(post._id);
                         }}
-                        >delete</a>
+                        ><i class="bi bi-trash3" /></a>
                     </td>
                 </tr>
             

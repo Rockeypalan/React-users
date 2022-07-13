@@ -130,7 +130,7 @@ const EditUser = () => {
                 </div>
                 <br />
                 <div>
-                    <input type="submit" className="btn btn-primary " value='Edit User' ></input>
+                    <input type="submit" className="btn btn-primary " value='Update User' ></input>
                 </div>
                 <br /><br />
             </form>

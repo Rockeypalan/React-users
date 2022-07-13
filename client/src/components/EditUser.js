@@ -81,12 +81,16 @@ const EditUser = () => {
       .catch((err) => console.log(err));
 
     navigate("/users");
+    navigate("/users");
   };
 
 
     return (
         <div>
-            <h3>Edit User</h3>
+            <div className='d-flex my-5'>
+            <h3>Edit User</h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a type="button" href="/users" class="btn btn-outline-danger px-4"><i class="bi bi-arrow-90deg-left"></i></a>
+            </div>
             <form className="row g-3" onSubmit={onSubmit} >
                 <div className='form-group col-md-4'>
                     <label>First_Name</label>

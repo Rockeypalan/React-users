@@ -51,7 +51,6 @@ const postSchema = mongoose.Schema(
         required: true,
         unique: true,
         trim: true,
-        minLength: [8, "Enter invalid minimum 8 char"],
     }
 
 },

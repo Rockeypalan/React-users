@@ -22,7 +22,10 @@ const UsersList = () => {
 
     return (
         <div>
-            <h3>List Of All The Users</h3>
+            <div className='d-flex my-5 '>
+            <h3>List Of All Users </h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a type="button" href="/" class="btn btn-outline-danger px-4"><i class="bi bi-arrow-90deg-left"></i></a>
+            </div>
             <table className='table'>
                 <thead>
                     <tr>

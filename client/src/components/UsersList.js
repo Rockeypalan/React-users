@@ -15,27 +15,23 @@ const UsersList = () => {
   const [search, setSearch] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/posts')
+        axios.get('https://reactuser-rak.herokuapp.com/posts')
             .then((res) => setPosts(res.data.posts))
             .catch((err) => console.log(err));
     }, []);
-
     
 
     const deletePost = (id) =>{
         setPosts(posts.filter((post) => post._id !== id));
-        axios.delete(`http://localhost:5000/posts/${id}`)
+        axios.delete(`https://reactuser-rak.herokuapp.com/posts/${id}`)
                 .then((res) => console.log(res.data))
                 .catch((err) => console.log(err));
     };
-    // get the current users
+
     const indexOfLastPost = currentPage * postPerPage;
-    // console.log(indexOfLastPost)
     const indexOfFirstPost = indexOfLastPost - postPerPage;
-    // console.log(indexOfFirstPost)
     const Posts = posts.slice(indexOfFirstPost, indexOfLastPost);
     let totalPosts = posts.length;
-    // console.log(currentPosts)
     const paginate = (pageNumber) => {
       setCurrentPage(pageNumber)
     };
@@ -110,9 +106,9 @@ const UsersList = () => {
                             return(
                                 <Post 
                                     post={currentPost}
-                                    deletePost = {deletePost}
+                                    deletePost ={deletePost}
                                     viewDetails={UserDetail}
-                                    key = {currentPost.id}
+                                    key = {currentPost._id}
                                 />
                             );
                         })

@@ -25,7 +25,7 @@ const EditUser = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/posts/${id}`)
+      .get(`https://reactuser-rak.herokuapp.com/posts/${id}`)
       .then((res) => {
         setPost((prevPost) => {
           return {
@@ -76,7 +76,7 @@ const EditUser = () => {
     };
 
     axios
-      .put(`http://localhost:5000/posts/${id}`, newPost)
+      .put(`https://reactuser-rak.herokuapp.com/posts/${id}`, newPost)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
 

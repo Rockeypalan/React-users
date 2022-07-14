@@ -46,7 +46,7 @@ const CreateUser = () => {
         };
         
 
-        axios.post('http://localhost:5000/posts/add', newPost)
+        axios.post('https://reactuser-rak.herokuapp.com/posts/add', newPost)
                 .then((res) => console.log(res.data))
                 .catch((err) => console.log(err));
 

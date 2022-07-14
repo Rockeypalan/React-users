@@ -41,7 +41,7 @@ export default function LoginUser(){
         if(!details.password, !details.email){
             toast.error('Enter all the fields');
         }else{ 
-            await axios.get(`http://localhost:5000/posts/${id}`)
+            await axios.get(`https://reactuser-rak.herokuapp.com/posts/${id}`)
             .then((response) => {
                 userDetails=response;
             });
@@ -59,7 +59,7 @@ export default function LoginUser(){
             })
             console.log("presentUser", presentUser);
             if(isUserPresent){  
-            await axios.get(`http://localhost:5000/posts/${presentUser.id}`)
+            await axios.get(`https://reactuser-rak.herokuapp.com/posts/${presentUser.id}`)
                 .then((response) => {
                     console.log("response",response);
                     if(response.data.posts!=null){

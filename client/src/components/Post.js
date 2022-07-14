@@ -1,9 +1,8 @@
 import React from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 const Post = ({post, deletePost, viewDetails}) => {
-    let navigate = useNavigate();
     return (
         
             
@@ -20,7 +19,7 @@ const Post = ({post, deletePost, viewDetails}) => {
                     <td>{post.state}</td>
                     <td>
                         <Link to={`/${post._id}`} > <i class="bi bi-pencil-square" /></Link> | 
-                        <a href='/create' onClick={()=> {
+                        <a href='#' onClick={()=> {
                             deletePost(post._id);
                         }}
                         ><i class="bi bi-trash3" /></a> |

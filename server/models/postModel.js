@@ -6,18 +6,15 @@ const postSchema = mongoose.Schema(
     firstname: {
         type: String,
         required: true,
-        trim: true,
     },
     lastname: {
         type: String,
         required: true,
-        trim: true,
     },
     email: {
         type: String,
         required: true,
         unique: true,
-        trim: true,
     },
     age: {
         type: Number,
@@ -26,7 +23,6 @@ const postSchema = mongoose.Schema(
     companyname: {
         type: String,
         required: true,
-        trim: true,
     },
     city: {
         type: String,
@@ -39,7 +35,6 @@ const postSchema = mongoose.Schema(
     zip: {
         type: Number,
         required: true,
-        minLength: [7, "Enter invalid"],
         
     },
     web: {
@@ -49,8 +44,6 @@ const postSchema = mongoose.Schema(
     password: {
         type: String,
         required: true,
-        unique: true,
-        trim: true,
     }
 
 },

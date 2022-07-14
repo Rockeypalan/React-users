@@ -81,7 +81,6 @@ const EditUser = () => {
       .catch((err) => console.log(err));
 
     navigate("/users");
-    navigate("/users");
   };
 
 

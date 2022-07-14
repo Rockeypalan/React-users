@@ -30,7 +30,8 @@ const LoginPage = () => {
                 </div>
                 <br />
                 <div>
-                    <input type="submit" className="btn btn-primary " value='Login User' ></input>
+                <a type="submit" href='/users' class="btn btn-outline-warning"><i class="bi bi-person-badge"></i> Login User</a> &nbsp;
+                <a type="submit" href='/create' class="btn btn-outline-success"><i class="bi bi-person-badge"></i> Create</a>
                 </div>
                 <br /><br />
             </form>
